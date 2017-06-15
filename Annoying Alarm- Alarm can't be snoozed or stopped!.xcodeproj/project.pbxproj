@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425A81EF34FB300E482F0 /* AppDelegate.swift */; };
+		412425AB1EF34FB300E482F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* ViewController.swift */; };
+		412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425AC1EF34FB300E482F0 /* Main.storyboard */; };
+		412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */; };
+		412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412425B21EF34FB300E482F0 /* Assets.xcassets */; };
+		412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		412425AA1EF34FB300E482F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		412425AD1EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel; sourceTree = "<group>"; };
+		412425B21EF34FB300E482F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		412425B51EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		412425B71EF34FB300E482F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		412425A21EF34FB300E482F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4124259C1EF34FB300E482F0 = {
+			isa = PBXGroup;
+			children = (
+				412425A71EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */,
+				412425A61EF34FB300E482F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		412425A61EF34FB300E482F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		412425A71EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */ = {
+			isa = PBXGroup;
+			children = (
+				412425A81EF34FB300E482F0 /* AppDelegate.swift */,
+				412425AA1EF34FB300E482F0 /* ViewController.swift */,
+				412425AC1EF34FB300E482F0 /* Main.storyboard */,
+				412425B21EF34FB300E482F0 /* Assets.xcassets */,
+				412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */,
+				412425B71EF34FB300E482F0 /* Info.plist */,
+				412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */,
+			);
+			path = "Annoying Alarm- Alarm can't be snoozed or stopped!";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		412425A41EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 412425BA1EF34FB300E482F0 /* Build configuration list for PBXNativeTarget "Annoying Alarm- Alarm can't be snoozed or stopped!" */;
+			buildPhases = (
+				412425A11EF34FB300E482F0 /* Sources */,
+				412425A21EF34FB300E482F0 /* Frameworks */,
+				412425A31EF34FB300E482F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Annoying Alarm- Alarm can't be snoozed or stopped!";
+			productName = "Annoying Alarm- Alarm can't be snoozed or stopped!";
+			productReference = 412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4124259D1EF34FB300E482F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ali Abouelatta";
+				TargetAttributes = {
+					412425A41EF34FB300E482F0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZY2Y4GLDVL;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 412425A01EF34FB300E482F0 /* Build configuration list for PBXProject "Annoying Alarm- Alarm can't be snoozed or stopped!" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4124259C1EF34FB300E482F0;
+			productRefGroup = 412425A61EF34FB300E482F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				412425A41EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		412425A31EF34FB300E482F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */,
+				412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */,
+				412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		412425A11EF34FB300E482F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				412425AB1EF34FB300E482F0 /* ViewController.swift in Sources */,
+				412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */,
+				412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		412425AC1EF34FB300E482F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				412425AD1EF34FB300E482F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				412425B51EF34FB300E482F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		412425B81EF34FB300E482F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		412425B91EF34FB300E482F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		412425BB1EF34FB300E482F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
+				INFOPLIST_FILE = "Annoying Alarm- Alarm can't be snoozed or stopped!/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.Annoying-Alarm--Alarm-can-t-be-snoozed-or-stopped-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		412425BC1EF34FB300E482F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
+				INFOPLIST_FILE = "Annoying Alarm- Alarm can't be snoozed or stopped!/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.Annoying-Alarm--Alarm-can-t-be-snoozed-or-stopped-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		412425A01EF34FB300E482F0 /* Build configuration list for PBXProject "Annoying Alarm- Alarm can't be snoozed or stopped!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				412425B81EF34FB300E482F0 /* Debug */,
+				412425B91EF34FB300E482F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		412425BA1EF34FB300E482F0 /* Build configuration list for PBXNativeTarget "Annoying Alarm- Alarm can't be snoozed or stopped!" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				412425BB1EF34FB300E482F0 /* Debug */,
+				412425BC1EF34FB300E482F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */,
+			);
+			currentVersion = 412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */;
+			path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4124259D1EF34FB300E482F0 /* Project object */;
+}
