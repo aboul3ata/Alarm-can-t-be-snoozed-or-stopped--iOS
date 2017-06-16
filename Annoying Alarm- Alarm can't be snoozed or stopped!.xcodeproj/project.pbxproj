@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425A81EF34FB300E482F0 /* AppDelegate.swift */; };
-		412425AB1EF34FB300E482F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* ViewController.swift */; };
+		412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* MainVC.swift */; };
 		412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425AC1EF34FB300E482F0 /* Main.storyboard */; };
 		412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */; };
 		412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412425B21EF34FB300E482F0 /* Assets.xcassets */; };
 		412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */; };
+		412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */; };
+		412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		412425AA1EF34FB300E482F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		412425AA1EF34FB300E482F0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		412425AD1EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel; sourceTree = "<group>"; };
 		412425B21EF34FB300E482F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		412425B51EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		412425B71EF34FB300E482F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alarm+CoreDataClass.swift"; path = "../Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alarm+CoreDataProperties.swift"; path = "../Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,10 @@
 		412425A71EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */ = {
 			isa = PBXGroup;
 			children = (
+				412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */,
+				412425C11EF3500A00E482F0 /* generated */,
 				412425A81EF34FB300E482F0 /* AppDelegate.swift */,
-				412425AA1EF34FB300E482F0 /* ViewController.swift */,
+				412425AA1EF34FB300E482F0 /* MainVC.swift */,
 				412425AC1EF34FB300E482F0 /* Main.storyboard */,
 				412425B21EF34FB300E482F0 /* Assets.xcassets */,
 				412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */,
@@ -65,6 +71,14 @@
 				412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */,
 			);
 			path = "Annoying Alarm- Alarm can't be snoozed or stopped!";
+			sourceTree = "<group>";
+		};
+		412425C11EF3500A00E482F0 /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */,
+			);
+			name = generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				412425AB1EF34FB300E482F0 /* ViewController.swift in Sources */,
+				412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */,
+				412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */,
+				412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */,
 				412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */,
 				412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */,
 			);
