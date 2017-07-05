@@ -62,11 +62,11 @@
 		412425A71EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */ = {
 			isa = PBXGroup;
 			children = (
+				41867E371F0C5033002E2C58 /* Controller */,
+				41867E361F0C502C002E2C58 /* Model */,
 				41F901651EF49DAF0086D0F1 /* view */,
-				412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */,
 				412425C11EF3500A00E482F0 /* generated */,
 				412425A81EF34FB300E482F0 /* AppDelegate.swift */,
-				412425AA1EF34FB300E482F0 /* MainVC.swift */,
 				412425AC1EF34FB300E482F0 /* Main.storyboard */,
 				412425B21EF34FB300E482F0 /* Assets.xcassets */,
 				412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */,
@@ -79,9 +79,25 @@
 		412425C11EF3500A00E482F0 /* generated */ = {
 			isa = PBXGroup;
 			children = (
+				412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */,
 				412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */,
 			);
 			name = generated;
+			sourceTree = "<group>";
+		};
+		41867E361F0C502C002E2C58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		41867E371F0C5033002E2C58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				412425AA1EF34FB300E482F0 /* MainVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		41F901651EF49DAF0086D0F1 /* view */ = {

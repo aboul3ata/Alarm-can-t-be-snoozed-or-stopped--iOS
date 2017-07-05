@@ -21,26 +21,20 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.dataSource = self
        // generateTestData()
         attemptFetch()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
+    
+    // Table View data Source and Delegate functions
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell" , for: indexPath) as! AlarmCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
-        
-        
-        
-        
 //        return UITableViewCell()
     }
-    
     
     func configureCell(cell: AlarmCell, indexPath:NSIndexPath){
     
@@ -48,8 +42,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     cell.configureCell(alarm: alarm)
     }
 
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = controller.sections {
         
@@ -57,7 +49,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
         return 0
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -68,7 +59,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             let sectionInfo = sections[section]
             return sectionInfo.numberOfObjects
         }
-        
         return 0
     }
     
@@ -84,13 +74,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
-        
-        
         do{
-        
         try controller.performFetch()
         } catch {
-        
             let error = error as NSError
             print("\(error)")
             
@@ -152,10 +138,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
+    // END of Core Data set up
     
     
     func generateTestData() {
-    
     
         let alarm = Alarm(context:context)
         alarm.duration = 10
