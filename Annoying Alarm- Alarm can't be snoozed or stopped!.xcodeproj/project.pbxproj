@@ -15,6 +15,7 @@
 		412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */; };
 		412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */; };
 		412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */; };
+		413601C51F0E18FA006FCD2E /* addAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413601C41F0E18FA006FCD2E /* addAlarmVC.swift */; };
 		41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F901681EF49E1E0086D0F1 /* AlarmCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		412425B71EF34FB300E482F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		412425BD1EF34FF300E482F0 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alarm+CoreDataClass.swift"; path = "../Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
 		412425BE1EF34FF300E482F0 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alarm+CoreDataProperties.swift"; path = "../Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		413601C41F0E18FA006FCD2E /* addAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAlarmVC.swift; sourceTree = "<group>"; };
 		41F901681EF49E1E0086D0F1 /* AlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				412425AA1EF34FB300E482F0 /* MainVC.swift */,
+				413601C41F0E18FA006FCD2E /* addAlarmVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */,
 				412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */,
 				412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */,
+				413601C51F0E18FA006FCD2E /* addAlarmVC.swift in Sources */,
 				41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
