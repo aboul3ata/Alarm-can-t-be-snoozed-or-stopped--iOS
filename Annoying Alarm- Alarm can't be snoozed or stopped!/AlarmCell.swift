@@ -14,14 +14,26 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var warning: UILabel!
+    @IBOutlet weak var normalLabel: UILabel!
     
-    
+    private let _durationArray = ["30 seconds", "60 seconds" ,"90 seconds","2 minutes"
+        ,"3 minutes", "4 minutes","5 minutes" , "7 minutes", "10 minutes", "15 minutes"]
     func configureCell(alarm: Alarm){
-    
-    //time.text = alarm.time
-    duration.text = "Duration: \(alarm.duration) minutes"
-    warning.text = "Warning is \(alarm.warning)"
         
-    
+    let durationConverted = _durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
+    duration.text = "Duration: \(durationConverted) minutes"
+    warning.text = "Warning is \(alarm.warning)"
+    time.text = "\(alarm.timeTitle)"
+        if alarm.annoying != true {
+        
+            normalLabel.isHidden = false
+            img.isHidden = true
+        
+        
+        }
     }
+
+    
+
+
 }

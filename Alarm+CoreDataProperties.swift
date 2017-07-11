@@ -19,5 +19,7 @@ extension Alarm {
     @NSManaged public var duration: Double
     @NSManaged public var time: NSDate?
     @NSManaged public var warning: Bool
+    @NSManaged public var annoying: Bool
+    @NSManaged public var timeTitle: String
 
 }
