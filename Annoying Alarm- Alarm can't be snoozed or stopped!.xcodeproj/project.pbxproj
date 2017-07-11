@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		410718411F14DC220034A921 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel; sourceTree = "<group>"; };
 		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		412425AA1EF34FB300E482F0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -356,9 +357,10 @@
 		412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				410718411F14DC220034A921 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel */,
 				412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */,
 			);
-			currentVersion = 412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */;
+			currentVersion = 410718411F14DC220034A921 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel */;
 			path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
