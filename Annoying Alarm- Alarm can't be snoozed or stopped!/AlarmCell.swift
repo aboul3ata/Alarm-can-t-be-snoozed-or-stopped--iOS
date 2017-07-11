@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class AlarmCell: UITableViewCell {
 
     @IBOutlet weak var img: UIImageView!
@@ -15,25 +14,42 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var warning: UILabel!
     @IBOutlet weak var normalLabel: UILabel!
-    
-    private let _durationArray = ["30 seconds", "60 seconds" ,"90 seconds","2 minutes"
-        ,"3 minutes", "4 minutes","5 minutes" , "7 minutes", "10 minutes", "15 minutes"]
+    @IBOutlet weak var enabledswitch: UISwitch!
+    @IBOutlet weak var allCell: UIView!
+
     func configureCell(alarm: Alarm){
         
     let durationConverted = _durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
-    duration.text = "Duration: \(durationConverted) minutes"
-    warning.text = "Warning is \(alarm.warning)"
+    duration.text = "Duration: \(durationConverted)"
+        
+    if alarm.warning {
+        warning.text = "Warning is ENABLED"
+    } else {
+        warning.text = "Warning is DISABLED"
+        }
+
     time.text = "\(alarm.timeTitle)"
         if alarm.annoying != true {
-        
             normalLabel.isHidden = false
             img.isHidden = true
-        
-        
         }
-    }
 
+        // Making Cell opaque when alarm is not enabled
+        if enabledswitch.isOn {
+            allCell.alpha = CGFloat(1)
+        } else {
+            allCell.alpha = CGFloat(0.4)
+        }
+        
+        
+        
+        
+        
+        
+     } // end of Configure Cell
+
+    
     
 
 
-}
+} // end of Class

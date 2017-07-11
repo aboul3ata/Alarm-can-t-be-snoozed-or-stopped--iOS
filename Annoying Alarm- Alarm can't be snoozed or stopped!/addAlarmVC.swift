@@ -15,8 +15,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var annoyingAlarmBOL: UISwitch!
     @IBOutlet weak var durationPicker: UIPickerView!
     
-    private var _durationArray = ["30 seconds", "60 seconds" ,"90 seconds","2 minutes"
-    ,"3 minutes", "4 minutes","5 minutes" , "7 minutes", "10 minutes", "15 minutes"]
+
     private var _timeofAlarmTitle:String!
     private var _warningofAlarm:Bool!
     private var _annoyingAlarm:Bool!
@@ -30,12 +29,13 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         durationPicker.dataSource = self
     }
 
-    
+    //returns date in GMT so needs to be formatted
     func timeChanged(_ sender: UIDatePicker) -> Date {
-                        //returns date in GMT so needs to be formatted
+
         return sender.date
     }
     
+    // return in format 06:00 AM for display
     func getTimeString(alarmTime: Date) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm a"
@@ -51,7 +51,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return _durationArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -61,7 +61,8 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
 
-    //calling all functions above upon submission
+    //Setting up new Alarm in core data and calling Save Function
+    //return back to original screen
     @IBAction func confirm(_ sender: Any) {
         let timeofAlarm =  timeChanged(alarmTime)
         let timeofAlarmTitle = getTimeString(alarmTime: timeofAlarm)
@@ -75,6 +76,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self._durationAlarm = Double(durationOfAlarm)
         print("\(timeofAlarm) \(warningofAlarm) \(annoyingAlarm ) \(durationOfAlarm) is annoying \(annoyingAlarm)")
         saveNewAlarmCoreData()
+        performSegue(withIdentifier: "backtoMain", sender: nil)
     }
     
     func saveNewAlarmCoreData () {

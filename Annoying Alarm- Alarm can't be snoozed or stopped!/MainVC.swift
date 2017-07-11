@@ -55,14 +55,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
-        
             let sectionInfo = sections[section]
             return sectionInfo.numberOfObjects
         }
         return 0
     }
-    
-    
     
     
     // core data set up
@@ -139,6 +136,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     // END of Core Data set up
+    
+    
+    @IBAction func enabledSwitchToggled(_ sender: Any) {
+        attemptFetch()
+        tableView.reloadData()
+    }
+    
+    
     
     
     func generateTestData() {
