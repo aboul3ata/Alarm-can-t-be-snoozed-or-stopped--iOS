@@ -76,7 +76,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         newAlarm.warning = self._warningofAlarm
         newAlarm.duration = self._durationAlarm
 //        newAlarm.time = self._timeofAlarm
-//        newAlarm.annoying = self._annoyingAlarm
+
         ad.saveContext()
     }
 

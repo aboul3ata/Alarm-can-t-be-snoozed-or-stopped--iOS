@@ -19,8 +19,8 @@ class AlarmCell: UITableViewCell {
     func configureCell(alarm: Alarm){
     
     //time.text = alarm.time
-    duration.text = "\(alarm.duration)"
-    //warning.text =
+    duration.text = "Duration: \(alarm.duration) minutes"
+    warning.text = "Warning is \(alarm.warning)"
         
     
     }
