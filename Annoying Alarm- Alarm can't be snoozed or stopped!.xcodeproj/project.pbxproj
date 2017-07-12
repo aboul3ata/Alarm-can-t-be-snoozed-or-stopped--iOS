@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4106E81A1F162924004E6C32 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106E8191F162924004E6C32 /* Scheduler.swift */; };
 		412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425A81EF34FB300E482F0 /* AppDelegate.swift */; };
 		412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* MainVC.swift */; };
 		412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425AC1EF34FB300E482F0 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4106E8191F162924004E6C32 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		410718411F14DC220034A921 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel; sourceTree = "<group>"; };
 		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		41867E361F0C502C002E2C58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4106E8191F162924004E6C32 /* Scheduler.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4106E81A1F162924004E6C32 /* Scheduler.swift in Sources */,
 				412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */,
 				412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */,
 				412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */,

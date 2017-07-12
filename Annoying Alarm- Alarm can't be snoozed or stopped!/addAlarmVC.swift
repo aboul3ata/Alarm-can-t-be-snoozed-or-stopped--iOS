@@ -60,7 +60,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
     }
     
-
+     //pressing CONFIRM BUTTON
     //Setting up new Alarm in core data and calling Save Function
     //return back to original screen
     @IBAction func confirm(_ sender: Any) {
@@ -76,6 +76,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self._durationAlarm = Double(durationOfAlarm)
         print("\(timeofAlarm) \(warningofAlarm) \(annoyingAlarm ) \(durationOfAlarm) is annoying \(annoyingAlarm)")
         saveNewAlarmCoreData()
+        Scheduler.sharedInstance.generateTestAlarm() 
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }
     

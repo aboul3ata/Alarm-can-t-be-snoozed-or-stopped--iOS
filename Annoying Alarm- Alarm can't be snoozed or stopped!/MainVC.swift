@@ -21,7 +21,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.dataSource = self
        // generateTestData()
         attemptFetch()
-
+        Scheduler.sharedInstance.requestauthorizationFirstTime()
     }
 
 
