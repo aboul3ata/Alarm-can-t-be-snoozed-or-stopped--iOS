@@ -19,7 +19,7 @@ class AlarmCell: UITableViewCell {
 
     func configureCell(alarm: Alarm){
         
-    let durationConverted = _durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
+    let durationConverted = durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
     duration.text = "Duration: \(durationConverted)"
         
     if alarm.warning {

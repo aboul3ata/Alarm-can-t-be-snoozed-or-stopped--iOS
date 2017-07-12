@@ -51,12 +51,12 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return _durationArray.count
+        return durationArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print("\(_durationArray[row])")
-        return _durationArray[row]
+        print("\(durationArray[row])")
+        return durationArray[row]
         
     }
     
@@ -78,8 +78,8 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         saveNewAlarmCoreData()
         
         //Setting Up Alarm In Notifications!
-        Scheduler.sharedInstance.createNewAlarm(date: timeofAlarm, identifierString: timeofAlarmTitle)
-        
+        Scheduler.sharedInstance.createNewAlarm(durationIndex: durationOfAlarm, date: timeofAlarm, identifierString: timeofAlarmTitle)
+
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }
     
