@@ -11,6 +11,7 @@ import UserNotifications
 
 class Scheduler {
     
+    //Creating Singleton
     static let sharedInstance = Scheduler()
     private init() {}
     
@@ -30,6 +31,40 @@ class Scheduler {
     } // end of function
     
     
+    
+    
+    // THIS IS ONLY 30 second alarm
+    // This is adding local notification to function as alarm
+    
+    func createNewAlarm(date: Date , identifierString: String){
+        
+        // UI of notification
+        let content = UNMutableNotificationContent()
+        content.title = "WAKE UP"
+        content.body = "ITS TIMEE!!!"
+        content.sound = UNNotificationSound.init(named:"btn.wav")
+        
+        //Setting up the repeat pattern
+        let triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        
+        
+        let identifier = identifierString // This is the titleofalarm so can be easily accessed if want to edit or deleter
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                print ("ALI: Something wrong with createNewAlarm function aka firing the alarm  ")
+            } else {
+                print ("ALI: \(triggerDaily)")
+            }
+        })
+        print(center)
+    }
+    
+    
+    
+    //ONLY FOR TESTING
     func generateTestAlarm() {
     
         let content = UNMutableNotificationContent()
@@ -44,13 +79,10 @@ class Scheduler {
                                             content: content, trigger: trigger)
         center.add(request, withCompletionHandler: { (error) in
             if error != nil {
-                print ("ALI: Something wrong with Firing alarm Line 47 ")
+                print ("ALI: Something wrong with Firing alarm  ")
             }
         })
-        
     }
-    
-    
     
     
     

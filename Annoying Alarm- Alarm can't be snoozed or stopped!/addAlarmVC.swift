@@ -76,7 +76,10 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self._durationAlarm = Double(durationOfAlarm)
         print("\(timeofAlarm) \(warningofAlarm) \(annoyingAlarm ) \(durationOfAlarm) is annoying \(annoyingAlarm)")
         saveNewAlarmCoreData()
-        Scheduler.sharedInstance.generateTestAlarm() 
+        
+        //Setting Up Alarm In Notifications!
+        Scheduler.sharedInstance.createNewAlarm(date: timeofAlarm, identifierString: timeofAlarmTitle)
+        
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }
     

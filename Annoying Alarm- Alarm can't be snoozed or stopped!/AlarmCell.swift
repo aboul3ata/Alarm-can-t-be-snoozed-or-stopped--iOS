@@ -42,10 +42,6 @@ class AlarmCell: UITableViewCell {
         }
         
         
-        
-        
-        
-        
      } // end of Configure Cell
 
     

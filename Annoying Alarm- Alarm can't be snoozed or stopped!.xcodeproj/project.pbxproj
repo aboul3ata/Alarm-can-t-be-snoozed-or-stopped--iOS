@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4106E81A1F162924004E6C32 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4106E8191F162924004E6C32 /* Scheduler.swift */; };
+		4106E81C1F165F56004E6C32 /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4106E81B1F165F56004E6C32 /* music1.mp3 */; };
+		4106E81F1F1660E8004E6C32 /* stop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4106E81E1F1660E8004E6C32 /* stop.mp3 */; };
+		4106E8211F166193004E6C32 /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4106E8201F166193004E6C32 /* btn.wav */; };
 		412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425A81EF34FB300E482F0 /* AppDelegate.swift */; };
 		412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* MainVC.swift */; };
 		412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425AC1EF34FB300E482F0 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		4106E8191F162924004E6C32 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		4106E81B1F165F56004E6C32 /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music1.mp3; sourceTree = "<group>"; };
+		4106E81E1F1660E8004E6C32 /* stop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stop.mp3; sourceTree = "<group>"; };
+		4106E8201F166193004E6C32 /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 		410718411F14DC220034A921 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_v2.xcdatamodel; sourceTree = "<group>"; };
 		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4106E81D1F165F5B004E6C32 /* Music Files */ = {
+			isa = PBXGroup;
+			children = (
+				4106E81B1F165F56004E6C32 /* music1.mp3 */,
+				4106E8201F166193004E6C32 /* btn.wav */,
+				4106E81E1F1660E8004E6C32 /* stop.mp3 */,
+			);
+			name = "Music Files";
+			sourceTree = "<group>";
+		};
 		4124259C1EF34FB300E482F0 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +85,7 @@
 		412425A71EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped! */ = {
 			isa = PBXGroup;
 			children = (
+				4106E81D1F165F5B004E6C32 /* Music Files */,
 				41867E361F0C502C002E2C58 /* Model */,
 				41F901651EF49DAF0086D0F1 /* view */,
 				41867E371F0C5033002E2C58 /* Controller */,
@@ -179,8 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */,
+				4106E81F1F1660E8004E6C32 /* stop.mp3 in Resources */,
 				412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */,
+				4106E8211F166193004E6C32 /* btn.wav in Resources */,
 				412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */,
+				4106E81C1F165F56004E6C32 /* music1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
