@@ -31,7 +31,6 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 
     //returns date in GMT so needs to be formatted
     func timeChanged(_ sender: UIDatePicker) -> Date {
-
         return sender.date
     }
     
@@ -41,7 +40,6 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         formatter.dateFormat = "h:mm a"
         formatter.timeZone = TimeZone.current
         let localAlarmTime = formatter.string(from: alarmTime)
-        print("\(localAlarmTime) and \(alarmTime)")
         return localAlarmTime
     }
     
@@ -55,7 +53,6 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        print("\(durationArray[row])")
         return durationArray[row]
         
     }
@@ -64,6 +61,8 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     //Setting up new Alarm in core data and calling Save Function
     //return back to original screen
     @IBAction func confirm(_ sender: Any) {
+        
+        // Setting up variables and saving to core data
         let timeofAlarm =  timeChanged(alarmTime)
         let timeofAlarmTitle = getTimeString(alarmTime: timeofAlarm)
         let warningofAlarm = warningBOL.isOn
@@ -74,11 +73,20 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self._warningofAlarm = warningofAlarm
         self._annoyingAlarm = annoyingAlarm
         self._durationAlarm = Double(durationOfAlarm)
-        print("\(timeofAlarm) \(warningofAlarm) \(annoyingAlarm ) \(durationOfAlarm) is annoying \(annoyingAlarm)")
+        print("ALI: time is \(timeofAlarm)  warning is \(warningofAlarm)  duration is\(durationOfAlarm) is annoying \(annoyingAlarm)")
         saveNewAlarmCoreData()
         
-        //Setting Up Alarm In Notifications!
-        Scheduler.sharedInstance.createNewAlarm(durationIndex: durationOfAlarm, date: timeofAlarm, identifierString: timeofAlarmTitle)
+        
+        
+        //Setting Up Alarm using Notifications according to its type
+        
+        if annoyingAlarm == true {
+            Scheduler.sharedInstance.createNewAlarm(durationIndex: durationOfAlarm, date: timeofAlarm, identifierString: timeofAlarmTitle)
+        } else {
+        
+            Scheduler.sharedInstance.createNormalAlarm(date: timeofAlarm, identifierString: timeofAlarmTitle)
+        }
+
 
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        configureUserNotifications()
+        
         return true
     }
 
@@ -44,6 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+    
+    // Setting up Category(action buttons) for snooze and dismiss
+    private func configureUserNotifications() {
+        let snoozeAction = UNNotificationAction(identifier: "snoozeBtn", title: "Snooze", options: [])
+        let dismissAction = UNNotificationAction(identifier: "dismissBtn", title: "Dismiss", options: [])
+        let category = UNNotificationCategory(identifier: "normalAlarmCategory", actions: [snoozeAction, dismissAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
@@ -97,5 +119,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// Global variables for core data
 let ad = UIApplication.shared.delegate as! AppDelegate
 let context = ad.persistentContainer.viewContext
+
+
+// Handling pressing Snooze or Dismiss buttons
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        print("Response received for \(response.actionIdentifier)")
+        completionHandler()
+        
+    }
+    
+}

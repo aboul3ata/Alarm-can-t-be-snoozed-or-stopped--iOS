@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/addAlarmVC.swift"
-            timestampString = "521571791.254248"
+            timestampString = "521645273.51073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "saveNewAlarmCoreData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/addAlarmVC.swift"
-            timestampString = "521571791.254248"
+            timestampString = "521645273.51073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "saveNewAlarmCoreData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/addAlarmVC.swift"
-            timestampString = "521572279.483435"
+            timestampString = "521645273.51073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/Scheduler.swift"
-            timestampString = "521574282.008847"
+            timestampString = "521642804.562965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "createNewAlarm(durationIndex:date:identifierString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/Scheduler.swift"
-            timestampString = "521574836.704078"
+            timestampString = "521642804.562965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "createNewAlarm(durationIndex:date:identifierString:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Annoying Alarm- Alarm can&apos;t be snoozed or stopped!/Scheduler.swift"
+            timestampString = "521642804.562965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "createNewAlarm(durationIndex:date:identifierString:)"
             landmarkType = "7">
          </BreakpointContent>
