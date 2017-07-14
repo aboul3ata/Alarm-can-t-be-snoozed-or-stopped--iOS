@@ -23,6 +23,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         attemptFetch()
         Scheduler.sharedInstance.requestauthorizationFirstTime()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+         attemptFetch()
+    }
 
 
     
@@ -39,7 +44,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     func configureCell(cell: AlarmCell, indexPath:NSIndexPath){
     
     let alarm = controller.object(at: indexPath as IndexPath)
-    cell.configureCell(alarm: alarm)
+        cell.configureCell(alarm: alarm, indexPath: indexPath as IndexPath)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -137,12 +142,62 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     // END of Core Data set up
     
+
+    //Cancelling or scheduling alarm when switch is toggled
     
-    @IBAction func enabledSwitchToggled(_ sender: Any) {
+    @IBAction func switchToggled(_ sender: UISwitch) {
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let cell = tableView.cellForRow(at: indexPath) as! AlarmCell!
+        let identifier = cell!.time.text
+        let isNormalAlarm = cell!.img.isHidden
+        let durationLbl: String = cell!.duration.text!
+        let durationLblNew = durationLbl.toLengthOf(length: 10)
+        let durationIndex = durationArray.index(of: durationLblNew)
+        
         attemptFetch()
+        
+        
+        for object in self.controller.fetchedObjects!{
+            if object.timeTitle == identifier {
+                
+                //cell!.enabledswitch.isOn = false
+                print("\(durationIndex) \(durationLblNew)")
+                if sender.isOn {
+                    //Normal alarm switched on
+                    if isNormalAlarm {
+                        object.enabled = true
+                        Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: true)
+                        print(object)
+                        //Annoying alarm switched on
+                    } else {
+                        object.enabled = true
+                        Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: false)
+                        print(object)
+                    }
+                    
+                } else {
+                    //Normal alarm switched off
+                    if isNormalAlarm {
+                        object.enabled = false
+                        Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
+                        print(object)
+                    } else {
+                        //Annoying alarm switched off
+                        object.enabled = false
+                        Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: durationIndex!)
+                        print(object)
+                        
+                    } // end of else 2
+                } // end of else 1
+                
+            ad.saveContext()
+            }// end of first if HUGE
+        }// end of first FOR HUGE
+ 
+        attemptFetch()
+        
         tableView.reloadData()
-    }
-    
+    }// end of function
     
     
     

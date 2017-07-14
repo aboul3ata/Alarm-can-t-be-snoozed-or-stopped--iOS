@@ -48,7 +48,7 @@
                                                     </constraints>
                                                     <color key="onTintColor" red="0.41941529509999997" green="0.70715498919999997" blue="0.88221412899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
-                                                        <action selector="enabledSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="3y7-ao-edA"/>
+                                                        <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tpr-JU-n8h"/>
                                                     </connections>
                                                 </switch>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="iCU-CH-8xD" userLabel="time">
@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-82-WFG">
-                                <rect key="frame" x="72" y="55.5" width="231" height="147"/>
+                                <rect key="frame" x="72" y="56" width="231" height="147"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="231" id="H3S-ec-dpd"/>
                                     <constraint firstAttribute="height" constant="147" id="dDZ-61-8Rs"/>
@@ -188,22 +188,22 @@
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS4-eD-Jc4">
-                                <rect key="frame" x="146.5" y="17" width="82.5" height="20.5"/>
+                                <rect key="frame" x="146" y="17" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LzP-hF-Qq7">
-                                <rect key="frame" x="16" y="212.5" width="343" height="40"/>
+                                <rect key="frame" x="16" y="213" width="343" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annoying alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n0-PJ-eHu">
-                                        <rect key="frame" x="0.0" y="10" width="294" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="294" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPC-Sh-wRK">
-                                        <rect key="frame" x="294" y="4.5" width="51" height="31"/>
+                                        <rect key="frame" x="294" y="5" width="51" height="31"/>
                                     </switch>
                                 </subviews>
                                 <constraints>
@@ -212,7 +212,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mU-jp-5Nh">
-                                <rect key="frame" x="16" y="307.5" width="97" height="21"/>
+                                <rect key="frame" x="16" y="308" width="97" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="1kc-fn-UiX"/>
                                     <constraint firstAttribute="height" constant="21" id="7Fc-4I-Z6U"/>
@@ -222,14 +222,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2D-0H-IT2">
-                                <rect key="frame" x="101" y="328.5" width="173" height="108"/>
+                                <rect key="frame" x="101" y="329" width="173" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="Zjt-R2-keH"/>
                                     <constraint firstAttribute="width" constant="173" id="cAU-7P-6HX"/>
                                 </constraints>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="hHk-NJ-QBS">
-                                <rect key="frame" x="16" y="425.5" width="343" height="31"/>
+                                <rect key="frame" x="16" y="426" width="343" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning before alarm starts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fo2-kw-oxy">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
@@ -246,7 +246,7 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8X7-gf-flO">
-                                <rect key="frame" x="16" y="251.5" width="343" height="46"/>
+                                <rect key="frame" x="16" y="252" width="343" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="9wN-5r-7gL"/>

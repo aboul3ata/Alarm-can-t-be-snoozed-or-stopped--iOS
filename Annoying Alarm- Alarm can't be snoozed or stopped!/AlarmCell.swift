@@ -17,29 +17,53 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var enabledswitch: UISwitch!
     @IBOutlet weak var allCell: UIView!
 
-    func configureCell(alarm: Alarm){
+    func configureCell(alarm: Alarm, indexPath: IndexPath){
         
     let durationConverted = durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
     duration.text = "Duration: \(durationConverted)"
+
         
     if alarm.warning {
         warning.text = "Warning is ENABLED"
+
     } else {
         warning.text = "Warning is DISABLED"
         }
 
     time.text = "\(alarm.timeTitle)"
+
+        
         if alarm.annoying != true {
             normalLabel.isHidden = false
             img.isHidden = true
         }
 
         // Making Cell opaque when alarm is not enabled
+
+        
+        
+        if alarm.enabled == true {
+            enabledswitch.isOn = true
+            
+        } else {
+            enabledswitch.isOn = false
+        }
+        
+        
         if enabledswitch.isOn {
             allCell.alpha = CGFloat(1)
         } else {
             allCell.alpha = CGFloat(0.4)
         }
+        
+        duration.tag = indexPath.row
+        warning.tag = indexPath.row
+        time.tag = indexPath.row
+        enabledswitch.tag = indexPath.row
+        normalLabel.tag =  indexPath.row
+        img.tag = indexPath.row
+        
+        
         
         
      } // end of Configure Cell

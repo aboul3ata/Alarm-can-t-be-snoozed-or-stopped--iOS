@@ -14,4 +14,16 @@ extension String {
     var dropLast: String {
         return dropLast()
     }
+    
+    func toLengthOf(length:Int) -> String {
+        if length <= 0 {
+            return self
+        } else if let to = self.index(self.startIndex, offsetBy: length, limitedBy: self.endIndex) {
+            return self.substring(from: to)
+            
+        } else {
+            return ""
+        }
+    }
 }
+

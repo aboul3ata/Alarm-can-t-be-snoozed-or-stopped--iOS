@@ -96,6 +96,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         newAlarm.time = self._timeofAlarm as NSDate?
         newAlarm.annoying = self._annoyingAlarm
         newAlarm.timeTitle = self._timeofAlarmTitle
+        newAlarm.enabled = true
         ad.saveContext()
     }
 

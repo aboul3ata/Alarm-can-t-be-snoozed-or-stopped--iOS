@@ -140,6 +140,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         identifierNew = identifierNew.dropLast(2)
         
         
+        
         // need better OR format
         if (response.actionIdentifier == "dismissBtn" || response.actionIdentifier == "snoozeBtn") {
             print("ALI  \(response.notification.request.identifier)")
@@ -150,7 +151,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 
                 Timer.scheduledTimer(withTimeInterval: 370, repeats: false) {
                     timer in
-                    Scheduler.sharedInstance.rescheduleAlarm(identifier: identifierNew)
+                    Scheduler.sharedInstance.rescheduleAlarm(identifier: identifierNew, normalAlarm: true)
                 }
             }
             // exclusive functionalty for snooze button

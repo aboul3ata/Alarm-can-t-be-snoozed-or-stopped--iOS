@@ -162,9 +162,27 @@ class Scheduler {
     
     
     
+    
+    // Annoying alarms cant be dismissed however this is needed
+    // when switch is toggled to cancel alarm inside app
+    func cancelspecialAnnoyingAlarm(identifier: String, durationIndex: Int) {
+        
+        for y in 0...durationIndex{
+            for x in 0...5 {
+                let identifierwithNumber = "\(identifier)\(x)\(y)"
+                center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
+            }
+        }
+    
+    
+    print (" canceled ANNOYING ALARM I guess with  duration index \(durationIndex) and identifier \(identifier)")
+    
+    }
+    
+    
     // NEED TO REDO TO ENHANCE PERFORMANE
     // RIGHT NOW I am fetching all alarms and checking against identifier time consuming and memory heavy!
-    func rescheduleAlarm(identifier: String){
+    func rescheduleAlarm(identifier: String , normalAlarm: Bool){
         
         // core data fetchingggg
         let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
@@ -181,12 +199,19 @@ class Scheduler {
             
         } // end of catch
         
+        
         self.controller = controller
         
         for object in self.controller.fetchedObjects!{
             if object.timeTitle == identifier {
                 let date = object.time as! Date
-                createNormalAlarm(date: date, identifierString: identifier)
+                let duration = Int(object.duration)
+                if normalAlarm {
+                    createNormalAlarm(date: date, identifierString: identifier)
+                } else {
+                    createAnnoyingAlarm(durationIndex: duration, date: date, identifierString: identifier)
+                }
+
             }
         }
     }
@@ -209,6 +234,7 @@ class Scheduler {
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
                 
                 var identifier: String
+                
                 
                 if num < 10 {
                     identifier = "snoozedAlarm0\(num)"

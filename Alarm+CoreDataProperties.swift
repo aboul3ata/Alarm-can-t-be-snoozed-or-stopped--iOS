@@ -21,5 +21,7 @@ extension Alarm {
     @NSManaged public var warning: Bool
     @NSManaged public var annoying: Bool
     @NSManaged public var timeTitle: String
+    @NSManaged public var enabled: Bool
+    
 
 }
