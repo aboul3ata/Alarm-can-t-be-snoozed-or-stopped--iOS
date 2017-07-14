@@ -132,11 +132,37 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     
+    // handling snooze or dismiss event
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        print("ALI Response received for \(response.actionIdentifier) ")
+        var identifierNew = response.notification.request.identifier              // retrieving identifier without the numbers appended at the end
+        identifierNew = identifierNew.dropLast(2)
         
-        print("Response received for \(response.actionIdentifier)")
+        
+        // need better OR format
+        if (response.actionIdentifier == "dismissBtn" || response.actionIdentifier == "snoozeBtn") {
+            print("ALI  \(response.notification.request.identifier)")
+            Scheduler.sharedInstance.cancelAlarm(identifier: identifierNew)
+            
+            // If its original alarm reshedule it after 5 minutes do be functional tomorrow
+            if identifierNew != "snoozedAlarm" {
+                
+                Timer.scheduledTimer(withTimeInterval: 370, repeats: false) {
+                    timer in
+                    Scheduler.sharedInstance.rescheduleAlarm(identifier: identifierNew)
+                }
+            }
+            // exclusive functionalty for snooze button
+            // generate an alarm of type snoozed Alarm 
+            // fires after 5 minutes from pressing
+            if response.actionIdentifier == "snoozeBtn" {
+                Scheduler.sharedInstance.regenerateSnoozedAlarm()
+            }
+        }
         completionHandler()
-        
     }
+    
+
     
 }

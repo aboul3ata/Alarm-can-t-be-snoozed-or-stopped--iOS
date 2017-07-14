@@ -81,15 +81,13 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         //Setting Up Alarm using Notifications according to its type
         
         if annoyingAlarm == true {
-            Scheduler.sharedInstance.createNewAlarm(durationIndex: durationOfAlarm, date: timeofAlarm, identifierString: timeofAlarmTitle)
+            Scheduler.sharedInstance.createAnnoyingAlarm(durationIndex: durationOfAlarm, date: timeofAlarm, identifierString: timeofAlarmTitle)
         } else {
-        
             Scheduler.sharedInstance.createNormalAlarm(date: timeofAlarm, identifierString: timeofAlarmTitle)
         }
-
-
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }
+    
     
     func saveNewAlarmCoreData () {
         let newAlarm = Alarm(context:context)
