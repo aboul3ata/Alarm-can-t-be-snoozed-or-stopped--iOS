@@ -20,6 +20,7 @@
 		412CC5681F18C8DA0004F37F /* string+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412CC5671F18C8DA0004F37F /* string+Extension.swift */; };
 		413601C51F0E18FA006FCD2E /* addAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413601C41F0E18FA006FCD2E /* addAlarmVC.swift */; };
 		41B9609C1F15107C00D4FC94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B9609B1F15107C00D4FC94 /* Constants.swift */; };
+		41E422E61F19961D00005DC4 /* materialDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E422E51F19961D00005DC4 /* materialDesign.swift */; };
 		41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F901681EF49E1E0086D0F1 /* AlarmCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		412CC5671F18C8DA0004F37F /* string+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string+Extension.swift"; sourceTree = "<group>"; };
 		413601C41F0E18FA006FCD2E /* addAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAlarmVC.swift; sourceTree = "<group>"; };
 		41B9609B1F15107C00D4FC94 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		41E422E51F19961D00005DC4 /* materialDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = materialDesign.swift; sourceTree = "<group>"; };
 		41F901681EF49E1E0086D0F1 /* AlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				41F901681EF49E1E0086D0F1 /* AlarmCell.swift */,
+				41E422E51F19961D00005DC4 /* materialDesign.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4106E81A1F162924004E6C32 /* Scheduler.swift in Sources */,
+				41E422E61F19961D00005DC4 /* materialDesign.swift in Sources */,
 				412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */,
 				412CC5681F18C8DA0004F37F /* string+Extension.swift in Sources */,
 				412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */,
