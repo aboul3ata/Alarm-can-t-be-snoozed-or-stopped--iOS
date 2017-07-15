@@ -1,0 +1,12 @@
+PODS:
+  - TableManager (1.8.0)
+
+DEPENDENCIES:
+  - TableManager (~> 1.8)
+
+SPEC CHECKSUMS:
+  TableManager: 425471240075a2b98c325f7449ca3326ae8d38df
+
+PODFILE CHECKSUM: 729cc16d36ca305d635d5cdf7578dd4d24f3b83a
+
+COCOAPODS: 1.2.1

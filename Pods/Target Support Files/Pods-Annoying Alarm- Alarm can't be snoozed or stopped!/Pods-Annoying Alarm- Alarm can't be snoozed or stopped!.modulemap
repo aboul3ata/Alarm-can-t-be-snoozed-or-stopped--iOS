@@ -1,0 +1,6 @@
+framework module Pods_Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_ {
+  umbrella header "Pods-Annoying Alarm- Alarm can't be snoozed or stopped!-umbrella.h"
+
+  export *
+  module * { export * }
+}

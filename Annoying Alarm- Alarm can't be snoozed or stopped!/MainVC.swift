@@ -193,14 +193,46 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             ad.saveContext()
             }// end of first if HUGE
         }// end of first FOR HUGE
- 
+        //CHECK TO SEE IF attemptFetch is really necessary
         attemptFetch()
-        
         tableView.reloadData()
     }// end of function
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+
     
+    // Delete a row from table view by swiping to left
+    //removing from core data + cancel any notifications from that
+     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+ 
+            if editingStyle == .delete {
+            
+            let cell = tableView.cellForRow(at: indexPath) as! AlarmCell
+            let identifier = cell.time.text
+
+            for object in self.controller.fetchedObjects!{
+                if object.timeTitle == identifier {
+                    Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
+                   context.delete(object)
+                    ad.saveContext()
+                    attemptFetch()
+                    //tableView.deleteRows(at: [indexPath], with: .fade)
+                    tableView.reloadData()
+                    
+                }
+            }
+
+        }
+
+    }
+    
+
+    
+
     func generateTestData() {
     
         let alarm = Alarm(context:context)
