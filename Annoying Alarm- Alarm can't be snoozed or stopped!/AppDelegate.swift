@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -119,16 +120,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// Global variables for core data
+// Global variables for core data + segue when alarm in foreground
 let ad = UIApplication.shared.delegate as! AppDelegate
 let context = ad.persistentContainer.viewContext
+var player: AVAudioPlayer?
+var seguePerformed = 0 // changed to 1 when segeu performed and to zero when button pressed back to original view
+
+
+
 
 
 // Handling pressing Snooze or Dismiss buttons
+// Handling alarm in foreground
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
+    
+    
+    
+    //Making sound play in foreground
+    // Changing View in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler(.alert)
+        
+        
+        let url = Bundle.main.url(forResource: "oldClock", withExtension: "wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+        }
+        
+        print("yaay")
+        //get the root view controller
+        var currentViewController = UIApplication.shared.keyWindow?.rootViewController
+        //loop over the presented view controllers and until you get the top view controller
+        while currentViewController?.presentedViewController != nil{
+            currentViewController = currentViewController?.presentedViewController
+        }
+        //And finally
+        if seguePerformed == 0 {
+            currentViewController?.performSegue(withIdentifier: "activeAlarm", sender: nil)
+            seguePerformed = 1
+        }
+
+        
     }
     
     

@@ -11,7 +11,6 @@
 		4106E8231F166A66004E6C32 /* oldClock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4106E8221F166A66004E6C32 /* oldClock.wav */; };
 		412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425A81EF34FB300E482F0 /* AppDelegate.swift */; };
 		412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412425AA1EF34FB300E482F0 /* MainVC.swift */; };
-		412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425AC1EF34FB300E482F0 /* Main.storyboard */; };
 		412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 412425AF1EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld */; };
 		412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412425B21EF34FB300E482F0 /* Assets.xcassets */; };
 		412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,9 @@
 		412CC5681F18C8DA0004F37F /* string+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412CC5671F18C8DA0004F37F /* string+Extension.swift */; };
 		413601C51F0E18FA006FCD2E /* addAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413601C41F0E18FA006FCD2E /* addAlarmVC.swift */; };
 		41B9609C1F15107C00D4FC94 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B9609B1F15107C00D4FC94 /* Constants.swift */; };
+		41D38B631F1B6845006B02A1 /* activeAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */; };
+		41D38B651F1B6D95006B02A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D38B641F1B6D95006B02A1 /* Main.storyboard */; };
+		41D38B671F1B7665006B02A1 /* customBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D38B661F1B7665006B02A1 /* customBtn.swift */; };
 		41E422E61F19961D00005DC4 /* materialDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E422E51F19961D00005DC4 /* materialDesign.swift */; };
 		41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F901681EF49E1E0086D0F1 /* AlarmCell.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +33,6 @@
 		412425A51EF34FB300E482F0 /* Annoying Alarm- Alarm can't be snoozed or stopped!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Annoying Alarm- Alarm can't be snoozed or stopped!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		412425A81EF34FB300E482F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		412425AA1EF34FB300E482F0 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		412425AD1EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		412425B01EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodel; sourceTree = "<group>"; };
 		412425B21EF34FB300E482F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		412425B51EF34FB300E482F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +42,9 @@
 		412CC5671F18C8DA0004F37F /* string+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string+Extension.swift"; sourceTree = "<group>"; };
 		413601C41F0E18FA006FCD2E /* addAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addAlarmVC.swift; sourceTree = "<group>"; };
 		41B9609B1F15107C00D4FC94 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activeAlarmVC.swift; sourceTree = "<group>"; };
+		41D38B641F1B6D95006B02A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		41D38B661F1B7665006B02A1 /* customBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customBtn.swift; sourceTree = "<group>"; };
 		41E422E51F19961D00005DC4 /* materialDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = materialDesign.swift; sourceTree = "<group>"; };
 		41F901681EF49E1E0086D0F1 /* AlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +94,7 @@
 				41867E371F0C5033002E2C58 /* Controller */,
 				412425C11EF3500A00E482F0 /* generated */,
 				412425A81EF34FB300E482F0 /* AppDelegate.swift */,
-				412425AC1EF34FB300E482F0 /* Main.storyboard */,
+				41D38B641F1B6D95006B02A1 /* Main.storyboard */,
 				412425B21EF34FB300E482F0 /* Assets.xcassets */,
 				412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */,
 				412425B71EF34FB300E482F0 /* Info.plist */,
@@ -130,6 +134,7 @@
 			children = (
 				412425AA1EF34FB300E482F0 /* MainVC.swift */,
 				413601C41F0E18FA006FCD2E /* addAlarmVC.swift */,
+				41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				41F901681EF49E1E0086D0F1 /* AlarmCell.swift */,
 				41E422E51F19961D00005DC4 /* materialDesign.swift */,
+				41D38B661F1B7665006B02A1 /* customBtn.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -206,7 +212,7 @@
 				412425B61EF34FB300E482F0 /* LaunchScreen.storyboard in Resources */,
 				4106E8231F166A66004E6C32 /* oldClock.wav in Resources */,
 				412425B31EF34FB300E482F0 /* Assets.xcassets in Resources */,
-				412425AE1EF34FB300E482F0 /* Main.storyboard in Resources */,
+				41D38B651F1B6D95006B02A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,10 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D38B631F1B6845006B02A1 /* activeAlarmVC.swift in Sources */,
 				4106E81A1F162924004E6C32 /* Scheduler.swift in Sources */,
 				41E422E61F19961D00005DC4 /* materialDesign.swift in Sources */,
 				412425AB1EF34FB300E482F0 /* MainVC.swift in Sources */,
 				412CC5681F18C8DA0004F37F /* string+Extension.swift in Sources */,
+				41D38B671F1B7665006B02A1 /* customBtn.swift in Sources */,
 				412425C01EF34FF300E482F0 /* Alarm+CoreDataProperties.swift in Sources */,
 				412425BF1EF34FF300E482F0 /* Alarm+CoreDataClass.swift in Sources */,
 				412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */,
@@ -234,14 +242,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		412425AC1EF34FB300E482F0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				412425AD1EF34FB300E482F0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		412425B41EF34FB300E482F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

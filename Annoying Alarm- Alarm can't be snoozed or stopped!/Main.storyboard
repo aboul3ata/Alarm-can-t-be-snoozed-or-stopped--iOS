@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GeN-ie-Nhf">
-                                <rect key="frame" x="2" y="20" width="406" height="716"/>
+                                <rect key="frame" x="2" y="20" width="406" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
                                 <prototypes>
@@ -158,11 +158,12 @@
                             <constraint firstItem="ee2-FA-4xL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dcw-nH-XnL"/>
                             <constraint firstAttribute="trailing" secondItem="GeN-ie-Nhf" secondAttribute="trailing" constant="6" id="fhT-Jt-G9r"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="feW-vE-vLh" secondAttribute="bottom" constant="5" id="pOe-xa-5lj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GeN-ie-Nhf" secondAttribute="bottom" id="zfo-sM-MlE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GeN-ie-Nhf" secondAttribute="bottom" constant="50" id="zfo-sM-MlE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="GeN-ie-Nhf" id="sIr-yc-VFe"/>
+                        <segue destination="y0M-4y-i4p" kind="show" identifier="activeAlarm" id="8Av-Ku-SNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -266,15 +267,15 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="Hsy-w9-SJd"/>
                                 </constraints>
-                                <state key="normal" title="Confirm">
+                                <state key="normal" title="Add Alarm">
                                     <color key="titleColor" red="0.31647759679999998" green="0.57797849180000005" blue="0.88106417660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="confirm:" destination="SLX-sL-kMl" eventType="touchUpInside" id="BD8-2w-kzM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="40F-6e-K1k">
-                                <rect key="frame" x="0.0" y="10" width="414" height="716"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="40F-6e-K1k">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -316,7 +317,118 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zji-ki-I7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-842" y="-293"/>
+            <point key="canvasLocation" x="-4743" y="-244"/>
+        </scene>
+        <!--Active AlarmVC-->
+        <scene sceneID="9w3-uR-rzc">
+            <objects>
+                <viewController restorationIdentifier="activeAlarm" storyboardIdentifier="activeAlarm" id="y0M-4y-i4p" customClass="activeAlarmVC" customModule="Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dta-jC-qcZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bah-fi-j9u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZgI-o5-Rgr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gql-Fd-vYT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-Ob-ySg">
+                                        <rect key="frame" x="137" y="673" width="140" height="35"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="WUf-Qm-10g"/>
+                                            <constraint firstAttribute="height" constant="35" id="yGq-kQ-cPf"/>
+                                        </constraints>
+                                        <state key="normal" title="Back to Alarms">
+                                            <color key="titleColor" red="0.41941529509999997" green="0.70715498919999997" blue="0.88221412899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="btnDesign" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backPressed:" destination="y0M-4y-i4p" eventType="touchUpInside" id="AUW-4S-vkv"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Uiz-Sw-wIZ">
+                                        <rect key="frame" x="90" y="60.333333333333314" width="234" height="602.66666666666674"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enk-q4-GPL">
+                                                <rect key="frame" x="0.0" y="0.0" width="234" height="75.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="que-OK-b5k">
+                                                <rect key="frame" x="0.0" y="75.333333333333314" width="234" height="75.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A99-Ax-pHE">
+                                                <rect key="frame" x="0.0" y="150.66666666666666" width="234" height="75.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xP-pO-fY2">
+                                                <rect key="frame" x="0.0" y="225.99999999999994" width="234" height="75.333333333333371"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bed-XW-arl">
+                                                <rect key="frame" x="0.0" y="301.33333333333337" width="234" height="75.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMg-zm-ZCT">
+                                                <rect key="frame" x="0.0" y="376.66666666666669" width="234" height="75.333333333333371"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP6-fo-KYu">
+                                                <rect key="frame" x="0.0" y="452.00000000000006" width="234" height="75.333333333333201"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk0-Ce-eSq">
+                                                <rect key="frame" x="0.0" y="527.33333333333326" width="234" height="75.333333333333371"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41941529509999997" green="0.70715498919999997" blue="0.88221412899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="7E7-Ob-ySg" firstAttribute="centerX" secondItem="gql-Fd-vYT" secondAttribute="centerX" id="TLy-dA-EGj"/>
+                                    <constraint firstItem="7E7-Ob-ySg" firstAttribute="top" secondItem="Uiz-Sw-wIZ" secondAttribute="bottom" constant="10" id="Wh5-Pv-jjQ"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="7E7-Ob-ySg" secondAttribute="bottom" constant="20" id="bKn-fQ-flX"/>
+                                    <constraint firstItem="Uiz-Sw-wIZ" firstAttribute="centerX" secondItem="gql-Fd-vYT" secondAttribute="centerX" id="j7s-sz-5EA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bah-fi-j9u" firstAttribute="top" secondItem="gql-Fd-vYT" secondAttribute="bottom" id="5pH-U5-Dnz"/>
+                            <constraint firstItem="gql-Fd-vYT" firstAttribute="leading" secondItem="ZgI-o5-Rgr" secondAttribute="leading" id="WGq-oa-8jx"/>
+                            <constraint firstItem="gql-Fd-vYT" firstAttribute="top" secondItem="ZgI-o5-Rgr" secondAttribute="top" id="YBF-z3-ydv"/>
+                            <constraint firstAttribute="trailing" secondItem="gql-Fd-vYT" secondAttribute="trailing" id="umv-Up-oY1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToMain" id="kEx-l9-foO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Gr-9z-i04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-404.34782608695656" y="-302.44565217391306"/>
         </scene>
     </scenes>
     <resources>
@@ -324,4 +436,7 @@
         <image name="Bg" width="375" height="667"/>
         <image name="semaphore-27013_640" width="54" height="43"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kEx-l9-foO"/>
+    </inferredMetricsTieBreakers>
 </document>
