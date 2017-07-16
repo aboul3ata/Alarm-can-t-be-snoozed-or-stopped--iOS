@@ -57,6 +57,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dismissAction = UNNotificationAction(identifier: "dismissBtn", title: "Dismiss", options: [])
         let category = UNNotificationCategory(identifier: "normalAlarmCategory", actions: [snoozeAction, dismissAction], intentIdentifiers: [], options: [])
         UNUserNotificationCenter.current().setNotificationCategories([category])
+        
+        
+        let warningAction = UNNotificationAction(identifier: "warningBtn", title: "I am awake", options: [])
+        let categoryWarning = UNNotificationCategory(identifier: "myWarningCategory", actions: [warningAction], intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([categoryWarning])
+        
     }
     
     
@@ -126,8 +132,8 @@ let context = ad.persistentContainer.viewContext
 var player: AVAudioPlayer?
 var seguePerformed = 0 // changed to 1 when segeu performed and to zero when button pressed back to original view
 
-
-
+var identifierForNormal: String?
+var identifierForAnnoying: String?
 
 
 // Handling pressing Snooze or Dismiss buttons
@@ -138,10 +144,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     
     //Making sound play in foreground
-    // Changing View in foreground
+    // Changing View in foreground to activeAlarm
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        
+        print("ALI identifier: \(notification.request.content.categoryIdentifier)")
+        center.removeAllDeliveredNotifications()
         let url = Bundle.main.url(forResource: "oldClock", withExtension: "wav")!
         
         do {
@@ -151,31 +158,74 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             player.prepareToPlay()
             player.play()
         } catch let error as NSError {
+            
+            print("ALI error playing audio is \(error)")
         }
         
-        print("yaay")
+        let typeOfNotificiation = notification.request.content.categoryIdentifier
+        
+        
+        // special view for annoying alarm (no dismiss or snooze buttons) or without in case of normal alarm
+        if typeOfNotificiation == "myNotificationCategory" {
+
+            self.performSegueCustom(segueIdentifier: "activeAlarm")
+        }
+        
+        if typeOfNotificiation == "normalAlarmCategory" {
+            
+            let identifierNew = notification.request.identifier
+            identifierForNormal = identifierNew.dropLast(2)
+
+            self.performSegueCustom(segueIdentifier: "activeAlarm2")
+        
+        }
+//        else if typeOfNotificiation == "normalAlarmCategory" {
+//            self.performSegueCustom(segueIdentifier: "activeAlarm2")
+//        }
+        
+        
+
+        
+        
+        
+    } // end of function!
+    
+    
+    
+    // method for perform segues from app delegate
+    // responsible for displaying the new view of activeAlarm
+    
+    private func performSegueCustom(segueIdentifier:String) {
+        
+        
         //get the root view controller
         var currentViewController = UIApplication.shared.keyWindow?.rootViewController
+        
         //loop over the presented view controllers and until you get the top view controller
         while currentViewController?.presentedViewController != nil{
             currentViewController = currentViewController?.presentedViewController
         }
+        
         //And finally
         if seguePerformed == 0 {
-            currentViewController?.performSegue(withIdentifier: "activeAlarm", sender: nil)
+            currentViewController?.performSegue(withIdentifier: segueIdentifier , sender: nil)
             seguePerformed = 1
         }
-
+        
         
     }
     
     
+    
     // handling snooze or dismiss event
+    //handling warning alarm
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
+        
+        center.removeAllDeliveredNotifications()
         print("ALI Response received for \(response.actionIdentifier) ")
         var identifierNew = response.notification.request.identifier              // retrieving identifier without the numbers appended at the end
         identifierNew = identifierNew.dropLast(2)
+        
         
         
         
@@ -191,6 +241,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                     timer in
                     Scheduler.sharedInstance.rescheduleAlarm(identifier: identifierNew, normalAlarm: true)
                 }
+                
             }
             // exclusive functionalty for snooze button
             // generate an alarm of type snoozed Alarm 
@@ -198,10 +249,22 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             if response.actionIdentifier == "snoozeBtn" {
                 Scheduler.sharedInstance.regenerateSnoozedAlarm()
             }
+        } // end of if
+        
+        
+        if response.actionIdentifier == "warningBtn" {
+        
+            Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifierNew, durationIndex: 9, warning: true)
+            
+            Timer.scheduledTimer(withTimeInterval: 500, repeats: false) {
+                timer in
+                Scheduler.sharedInstance.rescheduleAlarm(identifier: identifierNew, normalAlarm: false)
+            }
+        
         }
+        
+        
         completionHandler()
-    }
-    
-
+    } // end of function
     
 }

@@ -41,7 +41,9 @@ class Scheduler {
     // This is adding local notification to function as alarm
     // THIS IS FOR ANNOYING ALARM OPTION ONLY
     
-    func createAnnoyingAlarm(durationIndex:Int ,date: Date , identifierString: String){
+    func createAnnoyingAlarm(durationIndex:Int ,date: Date , identifierString: String, warning: Bool){
+        
+
         
         
         // UI of notification
@@ -63,6 +65,7 @@ class Scheduler {
                 
                 triggerDaily.minute = triggerDaily.minute! + y
                 
+                
                 let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
                 let identifier = "\(identifierString)\(x)\(y)" // This is the titleofalarm so can be easily accessed if want to edit or delete
                 let request = UNNotificationRequest(identifier: identifier,
@@ -76,6 +79,47 @@ class Scheduler {
                 })
             }
         } // end of first For loop
+        
+        // creating warning notification 2 minutes before original
+        if warning == true {
+            
+            let contentWarning = UNMutableNotificationContent()
+            contentWarning.title = "Are you up"
+            contentWarning.body = "Your alarm will fire in 2 minutes and you wont be able to stop it"
+            contentWarning.sound = UNNotificationSound.default()
+            contentWarning.categoryIdentifier = "myWarningCategory"
+            
+            
+            var triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
+            triggerDaily.second = 0
+            
+            
+            
+            // dealing with case of alarm set at 00 so need to change hour by 1 for warning
+            if triggerDaily.minute! < 2 {
+                
+                triggerDaily.minute = (60 + triggerDaily.minute!) - 2 //basically changing 01 minute to 59 minute etc
+                triggerDaily.hour = triggerDaily.hour! - 1
+                
+            } else {
+                    triggerDaily.minute = triggerDaily.minute! - 2
+            }
+
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+            let identifier = "\(identifierString)W0" // This is the titleofalarm so can be easily accessed if want to edit or delete
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: contentWarning, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if error != nil {
+                    print ("ALI: Something wrong with createNewAlarm function aka firing the alarm  ")
+                } else {
+                    print ("ALI: \(triggerDaily)")
+                }
+            })
+            
+            
+        }
         self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
             print("count", notifications.count)
             for notification in notifications{
@@ -165,7 +209,7 @@ class Scheduler {
     
     // Annoying alarms cant be dismissed however this is needed
     // when switch is toggled to cancel alarm inside app
-    func cancelspecialAnnoyingAlarm(identifier: String, durationIndex: Int) {
+    func cancelspecialAnnoyingAlarm(identifier: String, durationIndex: Int, warning: Bool) {
         
         for y in 0...durationIndex{
             for x in 0...5 {
@@ -173,7 +217,12 @@ class Scheduler {
                 center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
             }
         }
-    
+        
+        if warning == true {
+            let identifierWarning = "\(identifier)W"
+            center.removePendingNotificationRequests(withIdentifiers: [identifierWarning])
+        
+        }
     
     print (" canceled ANNOYING ALARM I guess with  duration index \(durationIndex) and identifier \(identifier)")
     
@@ -206,10 +255,11 @@ class Scheduler {
             if object.timeTitle == identifier {
                 let date = object.time as! Date
                 let duration = Int(object.duration)
+                let warningBol = object.warning
                 if normalAlarm {
                     createNormalAlarm(date: date, identifierString: identifier)
                 } else {
-                    createAnnoyingAlarm(durationIndex: duration, date: date, identifierString: identifier)
+                    createAnnoyingAlarm(durationIndex: duration, date: date, identifierString: identifier, warning: warningBol )
                 }
 
             }

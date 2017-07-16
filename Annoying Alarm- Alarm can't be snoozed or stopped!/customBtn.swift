@@ -27,7 +27,7 @@ import UIKit
                 if btnKey {
                     
                     self.layer.masksToBounds = false
-                    self.layer.cornerRadius = 15.0
+                    self.layer.cornerRadius = 22.5
                     self.layer.shadowOpacity = 0.2
                     self.layer.shadowRadius = 5.0
                     self.layer.shadowOffset = CGSize(width: 1.0, height: 0)

@@ -22,6 +22,7 @@
 		41D38B631F1B6845006B02A1 /* activeAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */; };
 		41D38B651F1B6D95006B02A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D38B641F1B6D95006B02A1 /* Main.storyboard */; };
 		41D38B671F1B7665006B02A1 /* customBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D38B661F1B7665006B02A1 /* customBtn.swift */; };
+		41D38B6B1F1BECF5006B02A1 /* activeNormalAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D38B6A1F1BECF5006B02A1 /* activeNormalAlarmVC.swift */; };
 		41E422E61F19961D00005DC4 /* materialDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E422E51F19961D00005DC4 /* materialDesign.swift */; };
 		41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F901681EF49E1E0086D0F1 /* AlarmCell.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activeAlarmVC.swift; sourceTree = "<group>"; };
 		41D38B641F1B6D95006B02A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		41D38B661F1B7665006B02A1 /* customBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customBtn.swift; sourceTree = "<group>"; };
+		41D38B6A1F1BECF5006B02A1 /* activeNormalAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activeNormalAlarmVC.swift; sourceTree = "<group>"; };
 		41E422E51F19961D00005DC4 /* materialDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = materialDesign.swift; sourceTree = "<group>"; };
 		41F901681EF49E1E0086D0F1 /* AlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				412425AA1EF34FB300E482F0 /* MainVC.swift */,
 				413601C41F0E18FA006FCD2E /* addAlarmVC.swift */,
 				41D38B621F1B6845006B02A1 /* activeAlarmVC.swift */,
+				41D38B6A1F1BECF5006B02A1 /* activeNormalAlarmVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				412425A91EF34FB300E482F0 /* AppDelegate.swift in Sources */,
 				412425B11EF34FB300E482F0 /* Annoying_Alarm__Alarm_can_t_be_snoozed_or_stopped_.xcdatamodeld in Sources */,
 				413601C51F0E18FA006FCD2E /* addAlarmVC.swift in Sources */,
+				41D38B6B1F1BECF5006B02A1 /* activeNormalAlarmVC.swift in Sources */,
 				41F901691EF49E1E0086D0F1 /* AlarmCell.swift in Sources */,
 				41B9609C1F15107C00D4FC94 /* Constants.swift in Sources */,
 			);
@@ -351,7 +355,7 @@
 				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
 				INFOPLIST_FILE = "Annoying Alarm- Alarm can't be snoozed or stopped!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.Annoying-Alarm--Alarm-can-t-be-snoozed-or-stopped-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.annoyingAlarm-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -364,7 +368,7 @@
 				DEVELOPMENT_TEAM = ZY2Y4GLDVL;
 				INFOPLIST_FILE = "Annoying Alarm- Alarm can't be snoozed or stopped!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.Annoying-Alarm--Alarm-can-t-be-snoozed-or-stopped-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aboulatta.annoyingAlarm-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

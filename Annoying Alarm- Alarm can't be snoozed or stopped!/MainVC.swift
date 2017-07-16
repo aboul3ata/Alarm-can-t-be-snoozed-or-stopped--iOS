@@ -184,7 +184,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                     } else {
                         //Annoying alarm switched off
                         object.enabled = false
-                        Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: durationIndex!)
+                        Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: durationIndex!, warning: object.warning)
                         print(object)
                         
                     } // end of else 2
@@ -232,7 +232,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
 
     
-
+/*
     func generateTestData() {
     
         let alarm = Alarm(context:context)
@@ -247,10 +247,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         ad.saveContext()
     }
     
-    
-    
-    
-    
+    */
     
     
     
