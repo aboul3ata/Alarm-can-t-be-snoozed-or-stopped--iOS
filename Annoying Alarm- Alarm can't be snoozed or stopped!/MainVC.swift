@@ -146,56 +146,78 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     //Cancelling or scheduling alarm when switch is toggled
     
     @IBAction func switchToggled(_ sender: UISwitch) {
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = tableView.cellForRow(at: indexPath) as! AlarmCell!
-        let identifier = cell!.time.text
-        let isNormalAlarm = cell!.img.isHidden
-        let durationLbl: String = cell!.duration.text!
-        let durationLblNew = durationLbl.toLengthOf(length: 10)
-        let durationIndex = durationArray.index(of: durationLblNew)
         
-        attemptFetch()
+
+        //toggling switch back to original state upon changing view
+        // improvement can be done by disallowing users to toggle switch
+        if player?.isPlaying == true {
+            
+            if sender.isOn {
+            
+                sender.isOn = false
+            } else {
+            
+                sender.isOn = true
+            }
+        }
         
+        // shouldnt be able to toggle switch if alarm is already fired
+        if player?.isPlaying == false {
         
-        for object in self.controller.fetchedObjects!{
-            if object.timeTitle == identifier {
-                
-                //cell!.enabledswitch.isOn = false
-                print("\(durationIndex) \(durationLblNew)")
-                if sender.isOn {
-                    //Normal alarm switched on
-                    if isNormalAlarm {
-                        object.enabled = true
-                        Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: true)
-                        print(object)
-                        //Annoying alarm switched on
-                    } else {
-                        object.enabled = true
-                        Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: false)
-                        print(object)
-                    }
+            let indexPath = IndexPath(row: sender.tag, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! AlarmCell!
+            let identifier = cell!.time.text
+            let isNormalAlarm = cell!.img.isHidden
+            let durationLbl: String = cell!.duration.text!
+            let durationLblNew = durationLbl.toLengthOf(length: 10)
+            let durationIndex = durationArray.index(of: durationLblNew)
+            
+            attemptFetch()
+            
+            
+            for object in self.controller.fetchedObjects!{
+                if object.timeTitle == identifier {
                     
-                } else {
-                    //Normal alarm switched off
-                    if isNormalAlarm {
-                        object.enabled = false
-                        Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
-                        print(object)
-                    } else {
-                        //Annoying alarm switched off
-                        object.enabled = false
-                        Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: durationIndex!, warning: object.warning)
-                        print(object)
+                    //cell!.enabledswitch.isOn = false
+                    print("\(durationIndex) \(durationLblNew)")
+                    if sender.isOn {
+                        //Normal alarm switched on
+                        if isNormalAlarm {
+                            object.enabled = true
+                            Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: true)
+                            print(object)
+                            //Annoying alarm switched on
+                        } else {
+                            object.enabled = true
+                            Scheduler.sharedInstance.rescheduleAlarm(identifier: identifier!, normalAlarm: false)
+                            print(object)
+                        }
                         
-                    } // end of else 2
-                } // end of else 1
-                
-            ad.saveContext()
-            }// end of first if HUGE
-        }// end of first FOR HUGE
-        //CHECK TO SEE IF attemptFetch is really necessary
-        attemptFetch()
-        tableView.reloadData()
+                    } else {
+                        //Normal alarm switched off
+                        if isNormalAlarm {
+                            object.enabled = false
+                            Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
+                            print(object)
+                        } else {
+                            //Annoying alarm switched off
+                            object.enabled = false
+                            Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: durationIndex!, warning: object.warning)
+                            print(object)
+                            
+                        } // end of else 2
+                    } // end of else 1
+                    
+                    ad.saveContext()
+                }// end of first if HUGE
+            }// end of first FOR HUGE
+            //CHECK TO SEE IF attemptFetch is really necessary
+            attemptFetch()
+            tableView.reloadData()
+        
+        
+        }
+  
     }// end of function
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -203,7 +225,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
 
-    
     // Delete a row from table view by swiping to left
     //removing from core data + cancel any notifications from that
      

@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 player.numberOfLoops = 3 
                 player.play()
             } catch let error as NSError {
-                
+                print (error)
             }
             
             
