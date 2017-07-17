@@ -14,8 +14,11 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var warningBOL: UISwitch!
     @IBOutlet weak var annoyingAlarmBOL: UISwitch!
     @IBOutlet weak var durationPicker: UIPickerView!
+    @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var stackViewWarning: UIStackView!
     
-
+    
+    
     private var _timeofAlarmTitle:String!
     private var _warningofAlarm:Bool!
     private var _annoyingAlarm:Bool!
@@ -27,7 +30,10 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         super.viewDidLoad()
         durationPicker.delegate = self
         durationPicker.dataSource = self
+    
+        durationPicker.selectRow(4, inComponent: 0, animated: false)
     }
+    
 
     //returns date in GMT so needs to be formatted
     func timeChanged(_ sender: UIDatePicker) -> Date {
@@ -56,6 +62,8 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         return durationArray[row]
         
     }
+    
+
     
      //pressing CONFIRM BUTTON
     //Setting up new Alarm in core data and calling Save Function
@@ -88,6 +96,22 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         performSegue(withIdentifier: "backtoMain", sender: nil)
     }
     
+    // remove display of duration and warning if its
+    // a normal alarm
+    @IBAction func annoyingSwitched(_ sender: Any) {
+        if annoyingAlarmBOL.isOn == false{
+        
+            durationPicker.isHidden = true
+            stackViewWarning.isHidden = true
+            durationLbl.isHidden = true
+        } else {
+        
+            durationPicker.isHidden = false
+            stackViewWarning.isHidden = false
+            durationLbl.isHidden = false
+        }
+    }
+
     
     func saveNewAlarmCoreData () {
         let newAlarm = Alarm(context:context)

@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="312" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hts-wY-vrC" id="u0Y-Hc-Eie" userLabel="all">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="77"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="77.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="semaphore-27013_640" translatesAutoresizingMaskIntoConstraints="NO" id="QjN-yG-iFj" userLabel="annoying image">
@@ -211,6 +211,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPC-Sh-wRK">
                                         <rect key="frame" x="239" y="4.5" width="51" height="31"/>
                                         <color key="onTintColor" red="0.41941529509999997" green="0.70715498919999997" blue="0.88221412899999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="annoyingSwitched:" destination="SLX-sL-kMl" eventType="valueChanged" id="gd6-Qs-8hU"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <constraints>
@@ -311,7 +314,9 @@
                     <connections>
                         <outlet property="alarmTime" destination="1xe-82-WFG" id="GS7-bj-hsb"/>
                         <outlet property="annoyingAlarmBOL" destination="XPC-Sh-wRK" id="3aa-lx-r52"/>
+                        <outlet property="durationLbl" destination="3mU-jp-5Nh" id="vyK-hg-cXm"/>
                         <outlet property="durationPicker" destination="C2D-0H-IT2" id="f6Q-9s-LXf"/>
+                        <outlet property="stackViewWarning" destination="hHk-NJ-QBS" id="cvb-qX-RLx"/>
                         <outlet property="warningBOL" destination="1Ov-Ws-AYw" id="eSU-Nw-0ne"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backtoMain" id="Nqp-vX-qPP"/>
                     </connections>
@@ -582,6 +587,6 @@
         <image name="semaphore-27013_640" width="54" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ayi-Hf-wOv"/>
+        <segue reference="Nqp-vX-qPP"/>
     </inferredMetricsTieBreakers>
 </document>

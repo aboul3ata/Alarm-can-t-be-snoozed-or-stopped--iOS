@@ -85,7 +85,7 @@ class Scheduler {
             
             let contentWarning = UNMutableNotificationContent()
             contentWarning.title = "Are you up"
-            contentWarning.body = "Your alarm will fire in 2 minutes and you wont be able to stop it"
+            contentWarning.body = "Your alarm will fire in 2 minutes and you wont be able to stop it the."
             contentWarning.sound = UNNotificationSound.default()
             contentWarning.categoryIdentifier = "myWarningCategory"
             

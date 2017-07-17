@@ -19,15 +19,25 @@ class AlarmCell: UITableViewCell {
 
     func configureCell(alarm: Alarm, indexPath: IndexPath){
         
-    let durationConverted = durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
-    duration.text = "Duration: \(durationConverted)"
-
         
-    if alarm.warning {
-        warning.text = "Warning is ENABLED"
+        // displaying labels of duration and enabled on cell only if its annoying kind
+        
+        if alarm.annoying == true {
+            
+            let durationConverted = durationArray[Int(alarm.duration)] // changing the index of duration to appropiate value for display
+            duration.text = "Duration: \(durationConverted)"
 
-    } else {
-        warning.text = "Warning is DISABLED"
+            if alarm.warning {
+                warning.text = "Warning is ENABLED"
+
+            } else {
+                warning.text = "Warning is DISABLED"
+            }
+        } else {
+        
+        warning.text = ""
+        duration.text = " Ability to snooze and dismiss"
+        
         }
 
     time.text = "\(alarm.timeTitle)"
