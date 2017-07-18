@@ -11,6 +11,19 @@ import CoreData
 import UserNotifications
 import AVFoundation
 
+
+
+// Global variables for core data + segue when alarm in foreground
+let ad = UIApplication.shared.delegate as! AppDelegate
+let context = ad.persistentContainer.viewContext
+var player: AVAudioPlayer?
+var seguePerformed = 0 // changed to 1 when segeu performed and to zero when button pressed back to original view
+
+var identifierForNormal: String?
+var identifierForAnnoying: String?
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -73,12 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let snoozeAction = UNNotificationAction(identifier: "snoozeBtn", title: "Snooze", options: [])
         let dismissAction = UNNotificationAction(identifier: "dismissBtn", title: "Dismiss", options: [])
         let category = UNNotificationCategory(identifier: "normalAlarmCategory", actions: [snoozeAction, dismissAction], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([category])
+        //UNUserNotificationCenter.current().setNotificationCategories([])
         
         
         let warningAction = UNNotificationAction(identifier: "warningBtn", title: "I am awake", options: [])
         let categoryWarning = UNNotificationCategory(identifier: "myWarningCategory", actions: [warningAction], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([categoryWarning])
+        UNUserNotificationCenter.current().setNotificationCategories([categoryWarning, category])
         
     }
     
@@ -143,14 +156,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-// Global variables for core data + segue when alarm in foreground
-let ad = UIApplication.shared.delegate as! AppDelegate
-let context = ad.persistentContainer.viewContext
-var player: AVAudioPlayer?
-var seguePerformed = 0 // changed to 1 when segeu performed and to zero when button pressed back to original view
 
-var identifierForNormal: String?
-var identifierForAnnoying: String?
 
 
 // Handling pressing Snooze or Dismiss buttons

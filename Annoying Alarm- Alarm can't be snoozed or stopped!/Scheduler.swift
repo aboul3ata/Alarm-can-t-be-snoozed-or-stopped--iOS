@@ -122,8 +122,8 @@ class Scheduler {
         }
         self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
             print("count", notifications.count)
-            for notification in notifications{
-                print(notification.description)
+            for _ in notifications{
+                //print(notification.description)
             }
         })
         
@@ -243,8 +243,8 @@ class Scheduler {
         do{
             try controller.performFetch()
         } catch {
-            let error = error as NSError
-            print("\(error)")
+            _ = error as NSError
+            //print("\(error)")
             
         } // end of catch
         
