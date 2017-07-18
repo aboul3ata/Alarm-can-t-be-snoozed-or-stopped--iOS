@@ -9,6 +9,8 @@
 import UIKit
 import UserNotifications
 import CoreData
+import EventKit
+
 
 class Scheduler {
     
@@ -18,7 +20,7 @@ class Scheduler {
     
     
     var controller: NSFetchedResultsController<Alarm>!
-    
+    var xoxo:Int = 0
 
    private let center = UNUserNotificationCenter.current()     // Where Notifications are managed
    private let options: UNAuthorizationOptions = [.alert, .sound, .badge];
@@ -58,10 +60,10 @@ class Scheduler {
         // Based on duration of alarm
         for y in 0...durationIndex {
     
-            for x in 0...5 {
+            for x in 0...1 {
     
                 var triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
-                triggerDaily.second = x*10
+                triggerDaily.second = x*30
                 
                 triggerDaily.minute = triggerDaily.minute! + y
                 
@@ -122,8 +124,8 @@ class Scheduler {
         }
         self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
             print("count", notifications.count)
-            for _ in notifications{
-                //print(notification.description)
+            for notification in notifications{
+                print(notification.description)
             }
         })
         
@@ -147,11 +149,11 @@ class Scheduler {
                 
         var counter:Int = 0
         
-        for y in 0...5 {
+        for y in 0...3 {
             
-            for x in 0...5 {
+            for x in 0...1 {
                 var triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
-                triggerDaily.second = x*10
+                triggerDaily.second = x*30
                 triggerDaily.minute = triggerDaily.minute! + y
     
                 
@@ -161,11 +163,8 @@ class Scheduler {
                 // needed later to retriever identifierString by removing last two digits
                 var identifier: String
                 
-                if counter < 10 {
                     identifier = "\(identifierString)0\(counter)" // This is the titleofalarm so can be easily accessed
-                } else {
-                    identifier = "\(identifierString)\(counter)" // This is the titleofalarm so can be easily accessed
-                }
+
                 
                 
                 
@@ -181,6 +180,13 @@ class Scheduler {
                 counter += 1
             } // end of second for loop
         } // end of first For loop
+        
+        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
+            print("count", notifications.count)
+            for _ in notifications{
+                //print(notification.description)
+            }
+        })
     }
     
     
@@ -191,16 +197,11 @@ class Scheduler {
     //one to schedule alarms again called 5 minutes later
     func cancelAlarm(identifier: String){
         
-        for num in 0...35 {
-            if num < 10 {
+        for num in 0...8 {
+            
                 let identifierwithNumber = "\(identifier)0\(num)"
-                print(identifierwithNumber)
                 center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
-            } else {
-                let identifierwithNumber = "\(identifier)\(num)"
-                center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
-                print(identifierwithNumber)
-            }
+            
         }
         
         print ("ALI REMOVED ALARMS SUCCESSFULLY")
@@ -214,14 +215,14 @@ class Scheduler {
     func cancelspecialAnnoyingAlarm(identifier: String, durationIndex: Int, warning: Bool) {
         
         for y in 0...durationIndex{
-            for x in 0...5 {
+            for x in 0...1 {
                 let identifierwithNumber = "\(identifier)\(x)\(y)"
                 center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
             }
         }
         
         if warning == true {
-            let identifierWarning = "\(identifier)W"
+            let identifierWarning = "\(identifier)W0"
             center.removePendingNotificationRequests(withIdentifiers: [identifierWarning])
         
         }
@@ -274,25 +275,22 @@ class Scheduler {
     //generate Alarm after 5 minutes 
     func regenerateSnoozedAlarm() {
         
-            for num in 0...35 {
+            for num in 0...8 {
                 let content = UNMutableNotificationContent()
                 content.title = "WAKE UP 2.0"
                 content.body = "ITS TIMEE!!! YOU ALREADY SNOOZED !!"
                 content.sound = UNNotificationSound.init(named:"oldClock.wav")
                 content.categoryIdentifier = "normalAlarmCategory"
                 
-                let extraSeconds = Double(num * 10)
+                let extraSeconds = Double(num * 30)
                 let timeInterval: Double = 370 + extraSeconds
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
                 
                 var identifier: String
                 
+
+                identifier = "snoozedAlarm0\(num)"
                 
-                if num < 10 {
-                    identifier = "snoozedAlarm0\(num)"
-                } else {
-                    identifier = "snoozedAlarm\(num)"
-                }
         
                 let request = UNNotificationRequest(identifier: identifier,
                                             content: content, trigger: trigger)
@@ -305,6 +303,59 @@ class Scheduler {
         print("ALI successfully regenerated snooze alarm")
     } // end of regenateSnoozedAlarm
     
+    
+    // local notification are 64 limit here we see if limit of 59 is reached so present user
+    //with an error of too many active alarms!
+    func notificationLimitReached(){
+        
+        // core data fetchingggg
+        let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
+        let datasort = NSSortDescriptor(key: "time", ascending: true)
+        fetchRequest.sortDescriptors = [datasort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        do{
+            try controller.performFetch()
+        } catch {
+            _ = error as NSError
+            //print("\(error)")
+            
+        } // end of catch
+        
+        self.controller = controller
+        
+        // counting pending notifications
+        var pendingNotifsCounter = 0
+        for object in self.controller.fetchedObjects!{
+            if object.annoying {
+                if object.enabled {pendingNotifsCounter += Int((object.duration + 1.0) * 2.0)}
+                if object.enabled && object.warning{
+                    pendingNotifsCounter += 1 //add one for the warning notif
+                }
+            } else {
+                if object.enabled {pendingNotifsCounter += 8 }
+            }
+            
+                
+        }
+        print("pending notifs \(pendingNotifsCounter)")
+        
+        
+        
+        }
+    
+    //Async getting count of pending notifications
+    // cant use DK how:(
+    /*
+    func isNotificationLimitreached(completed: @escaping (Bool)-> Void = {_ in }) {
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            
+            completed(requests.count > 59)
+        })
+    }
+ */
 
     
 }// end of class

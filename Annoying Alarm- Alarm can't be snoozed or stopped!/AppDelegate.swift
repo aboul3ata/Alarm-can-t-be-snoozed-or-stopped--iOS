@@ -41,24 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         
-        if player?.isPlaying == true {
-            
-            let url = Bundle.main.url(forResource: "oldClock", withExtension: "wav")!
-            
-            do {
-                player = try AVAudioPlayer(contentsOf: url)
-                guard let player = player else { return }
-                
-                player.prepareToPlay()
-                player.numberOfLoops = 3 
-                player.play()
-                player.volume = 1
-            } catch let error as NSError {
-                print (error)
-            }
-            
-            
-        }
         
     }
 

@@ -19,9 +19,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       // generateTestData()
         attemptFetch()
         Scheduler.sharedInstance.requestauthorizationFirstTime()
+        Scheduler.sharedInstance.notificationLimitReached()
+
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,11 +153,15 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 
         //toggling switch back to original state upon changing view
         // improvement can be done by disallowing users to toggle switch
+        
+        
+        
         if player?.isPlaying == true {
             
             if sender.isOn {
             
                 sender.isOn = false
+                
             } else {
             
                 sender.isOn = true
@@ -162,7 +169,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
         
         // shouldnt be able to toggle switch if alarm is already fired
-        if player?.isPlaying == false {
+        if player?.isPlaying != true {
         
             let indexPath = IndexPath(row: sender.tag, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! AlarmCell!
