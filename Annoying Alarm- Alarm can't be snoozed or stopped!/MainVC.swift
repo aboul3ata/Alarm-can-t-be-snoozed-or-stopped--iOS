@@ -19,9 +19,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       // generateTestData()
         attemptFetch()
         Scheduler.sharedInstance.requestauthorizationFirstTime()
+       // Scheduler.sharedInstance.notificationLimitReached()
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
