@@ -35,8 +35,8 @@ class AlarmCell: UITableViewCell {
             }
         } else {
         
-        warning.text = ""
-        duration.text = " Ability to snooze and dismiss"
+        warning.text = "and dismiss"
+        duration.text = " Ability to snooze "
         
         }
 

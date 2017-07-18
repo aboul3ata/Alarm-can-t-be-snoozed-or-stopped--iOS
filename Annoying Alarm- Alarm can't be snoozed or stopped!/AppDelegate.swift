@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 guard let player = player else { return }
                 
                 player.prepareToPlay()
-                player.volume = 1
                 player.numberOfLoops = 3 
                 player.play()
+                player.volume = 1
             } catch let error as NSError {
                 print (error)
             }
@@ -173,8 +173,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             guard let player = player else { return }
             
             player.prepareToPlay()
-            player.volume = 1
+
             player.play()
+            player.volume = 1
         } catch let error as NSError {
             
             print("ALI error playing audio is \(error)")
