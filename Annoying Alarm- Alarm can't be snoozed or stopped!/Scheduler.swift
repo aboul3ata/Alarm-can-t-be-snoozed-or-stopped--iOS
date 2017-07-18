@@ -194,10 +194,12 @@ class Scheduler {
         for num in 0...35 {
             if num < 10 {
                 let identifierwithNumber = "\(identifier)0\(num)"
+                print(identifierwithNumber)
                 center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
             } else {
                 let identifierwithNumber = "\(identifier)\(num)"
                 center.removePendingNotificationRequests(withIdentifiers: [identifierwithNumber])
+                print(identifierwithNumber)
             }
         }
         

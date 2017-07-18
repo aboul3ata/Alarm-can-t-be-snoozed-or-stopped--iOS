@@ -237,7 +237,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 
             for object in self.controller.fetchedObjects!{
                 if object.timeTitle == identifier {
-                    Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
+                    if object.annoying {
+                        Scheduler.sharedInstance.cancelspecialAnnoyingAlarm(identifier: identifier!, durationIndex: Int(object.duration), warning: object.warning)
+                    } else {
+                        Scheduler.sharedInstance.cancelAlarm(identifier: identifier!)
+                    }
+
+                    print(identifier!)
                    context.delete(object)
                     ad.saveContext()
                     attemptFetch()
