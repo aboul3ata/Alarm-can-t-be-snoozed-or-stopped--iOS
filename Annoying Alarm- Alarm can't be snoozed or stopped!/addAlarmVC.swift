@@ -24,6 +24,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     private var _annoyingAlarm:Bool!
     private var _durationAlarm:Double!
     private var _timeofAlarm:Date!
+    private var _alarmEnabled = true
     
     
     override func viewDidLoad() {
@@ -81,11 +82,21 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self._warningofAlarm = warningofAlarm
         self._annoyingAlarm = annoyingAlarm
         self._durationAlarm = Double(durationOfAlarm)
+        
+        let numberOfNotifs = Scheduler.sharedInstance.notificationLimitReached()
+        // ddisabling new alarm if more than 54 scheduled notifs
+        // presenting alert to user to know that!
+        if numberOfNotifs > 59 {
+            let alert = UIAlertController(title: "ERROR: TOO MANY ACTIVE ALARMS", message: "The alarm you just added WAS NOT ADDED. Delete some alarms to enable it!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "I will turn off some alarms!", style: UIAlertActionStyle.default, handler: {action in
+                self.performSegue(withIdentifier: "backtoMain", sender: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
         print("ALI: time is \(timeofAlarm)  warning is \(warningofAlarm)  duration is\(durationOfAlarm) is annoying \(annoyingAlarm)")
         saveNewAlarmCoreData()
-        
-        
-        
+    
         //Setting Up Alarm using Notifications according to its type
         
         if annoyingAlarm == true {
@@ -94,8 +105,8 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             Scheduler.sharedInstance.createNormalAlarm(date: timeofAlarm, identifierString: timeofAlarmTitle)
         }
         performSegue(withIdentifier: "backtoMain", sender: nil)
+        }
     }
-    
     // remove display of duration and warning if its
     // a normal alarm
     @IBAction func annoyingSwitched(_ sender: Any) {

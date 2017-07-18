@@ -122,12 +122,12 @@ class Scheduler {
             
             
         }
-        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
-            print("count", notifications.count)
-            for notification in notifications{
-                print(notification.description)
-            }
-        })
+//        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
+//            print("count", notifications.count)
+//            for notification in notifications{
+//                print(notification.description)
+//            }
+//        })
         
     }
     
@@ -181,12 +181,12 @@ class Scheduler {
             } // end of second for loop
         } // end of first For loop
         
-        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
-            print("count", notifications.count)
-            for _ in notifications{
-                //print(notification.description)
-            }
-        })
+//        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
+//            print("count", notifications.count)
+//            for _ in notifications{
+//                //print(notification.description)
+//            }
+//        })
     }
     
     
@@ -307,7 +307,7 @@ class Scheduler {
     
     // local notification are 64 limit here we see if limit of 59 is reached so present user
     //with an error of too many active alarms!
-    func notificationLimitReached(){
+    func notificationLimitReached() -> Int {
         
         // core data fetchingggg
         let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
@@ -340,7 +340,7 @@ class Scheduler {
             
                 
         }
-        print("pending notifs \(pendingNotifsCounter)")
+        return pendingNotifsCounter
         
         
         

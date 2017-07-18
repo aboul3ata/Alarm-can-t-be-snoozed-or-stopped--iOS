@@ -21,7 +21,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.dataSource = self
         attemptFetch()
         Scheduler.sharedInstance.requestauthorizationFirstTime()
-        Scheduler.sharedInstance.notificationLimitReached()
 
 
         
