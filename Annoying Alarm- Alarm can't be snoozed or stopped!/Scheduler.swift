@@ -273,6 +273,7 @@ class Scheduler {
     
     
     //generate Alarm after 5 minutes 
+    // s
     func regenerateSnoozedAlarm() {
         
             for num in 0...8 {
