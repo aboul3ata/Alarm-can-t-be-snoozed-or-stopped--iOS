@@ -124,8 +124,8 @@ class Scheduler {
         }
         self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
             print("count", notifications.count)
-            for _ in notifications{
-                //print(notification.description)
+            for notification in notifications{
+                print(notification.description)
             }
         })
         
@@ -180,6 +180,13 @@ class Scheduler {
                 counter += 1
             } // end of second for loop
         } // end of first For loop
+        
+        self.center.getPendingNotificationRequests(completionHandler: { (notifications) in
+            print("count", notifications.count)
+            for _ in notifications{
+                //print(notification.description)
+            }
+        })
     }
     
     
@@ -215,7 +222,7 @@ class Scheduler {
         }
         
         if warning == true {
-            let identifierWarning = "\(identifier)W"
+            let identifierWarning = "\(identifier)W0"
             center.removePendingNotificationRequests(withIdentifiers: [identifierWarning])
         
         }
@@ -316,12 +323,16 @@ class Scheduler {
             
         } // end of catch
         
-        
         self.controller = controller
+        
+        // counting pending notifications
         var pendingNotifsCounter = 0
         for object in self.controller.fetchedObjects!{
             if object.annoying {
-                if object.enabled {pendingNotifsCounter += Int(object.duration * 2.0)}
+                if object.enabled {pendingNotifsCounter += Int((object.duration + 1.0) * 2.0)}
+                if object.enabled && object.warning{
+                    pendingNotifsCounter += 1 //add one for the warning notif
+                }
             } else {
                 if object.enabled {pendingNotifsCounter += 8 }
             }
@@ -334,7 +345,17 @@ class Scheduler {
         
         }
     
-    
-    
+    //Async getting count of pending notifications
+    // cant use DK how:(
+    /*
+    func isNotificationLimitreached(completed: @escaping (Bool)-> Void = {_ in }) {
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            
+            completed(requests.count > 59)
+        })
+    }
+ */
+
     
 }// end of class
