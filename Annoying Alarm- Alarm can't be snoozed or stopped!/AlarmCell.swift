@@ -46,6 +46,9 @@ class AlarmCell: UITableViewCell {
         if alarm.annoying != true {
             normalLabel.isHidden = false
             img.isHidden = true
+        } else {
+            normalLabel.isHidden = true
+            img.isHidden = false
         }
 
         // Making Cell opaque when alarm is not enabled
