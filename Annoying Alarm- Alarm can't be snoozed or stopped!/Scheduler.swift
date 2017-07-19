@@ -340,7 +340,11 @@ class Scheduler {
             
                 
         }
+        
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            print("ALI real \(requests.count) while urs is \(pendingNotifsCounter)")  })
         return pendingNotifsCounter
+
         
         
         
