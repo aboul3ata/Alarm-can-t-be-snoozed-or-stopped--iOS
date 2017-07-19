@@ -161,7 +161,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             guard let player = player else { return }
             
             player.prepareToPlay()
-
             player.play()
             player.volume = 1
         } catch let error as NSError {

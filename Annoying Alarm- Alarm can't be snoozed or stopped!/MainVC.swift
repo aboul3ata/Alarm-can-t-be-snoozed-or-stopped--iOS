@@ -168,7 +168,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
         let numberofNotifs = Scheduler.sharedInstance.notificationLimitReached()
         // shouldnt be able to toggle switch if alarm is already fired
-        if ((player?.isPlaying != true) && (numberofNotifs < 59)) || ((player?.isPlaying != true) && (numberofNotifs > 58) && (sender.isOn == false) ) {
+        if ((player?.isPlaying != true) && (numberofNotifs < 50)) || ((player?.isPlaying != true) && (numberofNotifs > 49) && (sender.isOn == false) ) {
         
             let indexPath = IndexPath(row: sender.tag, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! AlarmCell!
@@ -222,7 +222,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             tableView.reloadData()
     
         // Dealing with case too many alarms scheduled
-        } else if (player?.isPlaying != true) && (numberofNotifs > 58) && (sender.isOn == true) {
+        } else if (player?.isPlaying != true) && (numberofNotifs > 49) && (sender.isOn == true) {
 
             let alert = UIAlertController(title: "ERROR: TOO MANY ACTIVE ALARMS", message: "To give you the most reliable experience we have set a limit on number of active alarms. Please deactive or delete some alarms to enable that one!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "I will turn off some alarms!", style: UIAlertActionStyle.default, handler: nil))

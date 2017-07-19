@@ -86,7 +86,7 @@ class addAlarmVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         let numberOfNotifs = Scheduler.sharedInstance.notificationLimitReached()
         // ddisabling new alarm if more than 54 scheduled notifs
         // presenting alert to user to know that!
-        if numberOfNotifs > 59 {
+        if numberOfNotifs > 50 {
             let alert = UIAlertController(title: "ERROR: TOO MANY ACTIVE ALARMS", message: "The alarm you just added WAS NOT ADDED. Delete some alarms to enable it!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "I will turn off some alarms!", style: UIAlertActionStyle.default, handler: {action in
                 self.performSegue(withIdentifier: "backtoMain", sender: nil)
