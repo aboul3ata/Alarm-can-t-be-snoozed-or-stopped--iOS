@@ -165,6 +165,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             
                 sender.isOn = true
             }
+            tableView.reloadData()
+            let alert = UIAlertController(title: "An alarm is currently playing", message: "You cant manipulate your current alarms while one of them is active. Please wait until the current alarm stops.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "I understand", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
         }
         let numberofNotifs = Scheduler.sharedInstance.notificationLimitReached()
         // shouldnt be able to toggle switch if alarm is already fired

@@ -24,6 +24,7 @@ var identifierForAnnoying: String?
 
 
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -161,6 +162,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             guard let player = player else { return }
             
             player.prepareToPlay()
+            player.numberOfLoops = 2
             player.play()
             player.volume = 1
         } catch let error as NSError {
