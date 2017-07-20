@@ -22,7 +22,26 @@ var seguePerformed = 0 // changed to 1 when segeu performed and to zero when but
 var identifierForNormal: String?
 var identifierForAnnoying: String?
 
+let defaults:UserDefaults = UserDefaults.standard
 
+private var firstLaunch : Bool = false
+
+// CHeck if app is first time launched 
+// to delete any alarms app if he is reinstalling the app
+// possibly a welcome screen
+extension UIApplication {
+    
+    static func isFirstLaunch() -> Bool {
+        let firstLaunchFlag = "isFirstLaunchFlag"
+        let isFirstLaunch = UserDefaults.standard.string(forKey: firstLaunchFlag) == nil
+        if (isFirstLaunch) {
+            firstLaunch = isFirstLaunch
+            UserDefaults.standard.set("false", forKey: firstLaunchFlag)
+            UserDefaults.standard.synchronize()
+        }
+        return firstLaunch || isFirstLaunch
+    }
+}
 
 
 @UIApplicationMain
@@ -36,6 +55,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         
         configureUserNotifications()
+        print(defaults)
+        // delete any existing alarm if app was installed then deleted
+        if UIApplication.isFirstLaunch() {
+            print("ali this is the first time")
+            Scheduler.sharedInstance.deleteallpreviousAlarms()
+        } else {
+            print("ALI NOT FIRST TIME TO LOAD APP")
+        }
         
         return true
     }

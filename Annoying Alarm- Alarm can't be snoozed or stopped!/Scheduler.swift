@@ -37,7 +37,10 @@ class Scheduler {
     } // end of function
     
     
+    func deleteallpreviousAlarms() {
+        center.removeAllPendingNotificationRequests()
     
+    }
     
     // THIS repetitive notification every 10 seconds to simulate alarm
     // This is adding local notification to function as alarm
