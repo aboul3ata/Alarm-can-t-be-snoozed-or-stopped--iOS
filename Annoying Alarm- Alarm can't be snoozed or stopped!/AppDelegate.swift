@@ -183,20 +183,33 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("ALI identifier: \(notification.request.content.categoryIdentifier)")
         center.removeAllDeliveredNotifications()
         let url = Bundle.main.url(forResource: "oldClock", withExtension: "wav")!
+
         
+        let session = AVAudioSession.sharedInstance()
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.prepareToPlay()
-            player.numberOfLoops = 2
-            player.play()
-            player.volume = 1
+            // Configure the audio session for movie playback
+            try session.setCategory(AVAudioSessionCategoryPlayback,
+                                    mode: AVAudioSessionModeMoviePlayback,
+                                    options: [])
         } catch let error as NSError {
-            
-            print("ALI error playing audio is \(error)")
+            print("Failed to set the audio session category and mode: \(error.localizedDescription)")
         }
         
+        
+         do {
+         player = try AVAudioPlayer(contentsOf: url)
+         guard let player = player else { return }
+         
+         player.prepareToPlay()
+         player.numberOfLoops = 2
+         player.play()
+         player.volume = 1
+         } catch let error as NSError {
+         
+         print("ALI error playing audio is \(error)")
+         }
+ 
+
         let typeOfNotificiation = notification.request.content.categoryIdentifier
         
         
